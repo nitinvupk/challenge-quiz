@@ -13,9 +13,9 @@ function RatingAndCategory (props) {
       let selectedRating = ratingLevels[difficulty]
       for (let i = 0; i < 5; i++) {
         if (i < selectedRating.select) {
-          ratings.push(<i className='fa fa-star' />)
+          ratings.push(<i className='fa fa-star' key={i} />)
         } else {
-          ratings.push(<i className='fa fa-star ratingDisable' />)
+          ratings.push(<i className='fa fa-star ratingDisable' key={i} />)
         }
       }
       return ratings

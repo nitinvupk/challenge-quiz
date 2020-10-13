@@ -23,15 +23,12 @@ function App () {
 
   const handleSelectQuestion = () => {
     let selectedQuestion = questions[currentQueNumber]
-    if (Object.keys(selectedQuestion).length) {
-      let arrAns = []
-      arrAns = selectedQuestion.incorrect_answers
-      arrAns.push(selectedQuestion.correct_answer)
-      arrAns = shuffle(arrAns)
-      console.log(arrAns)
-      selectedQuestion['options'] = arrAns
-      setSelectedQuestion(selectedQuestion)
-    }
+    let arrAns = []
+    arrAns = selectedQuestion.incorrect_answers
+    arrAns.push(selectedQuestion.correct_answer)
+    arrAns = shuffle(arrAns)
+    selectedQuestion['options'] = arrAns
+    setSelectedQuestion(selectedQuestion)
   }
 
   const handleNextQuestion = () => {
