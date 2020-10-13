@@ -1,8 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import { shuffle } from './helpers/index'
+import { calculatePercent, shuffle } from './helpers/index'
 import allQuestions from './questions.json'
 import RatingAndCategory from './components/RatingAndCategory'
 import Question from './components/Question'
+import ScoreBar from './components/ScoreBar'
 import './App.css'
 
 function App () {
@@ -10,6 +11,7 @@ function App () {
   const [ selectedQuestion, setSelectedQuestion ] = useState({})
   const [ currentQueNumber, setCurrentQueNumber ] = useState(0)
   const [ finished, setFinished ] = useState(false)
+  const [ score, setScore ] = useState(0)
 
   useEffect(() => {
     setQuestions(allQuestions)
@@ -40,6 +42,10 @@ function App () {
     }
   }
 
+  const handleScore = () => {
+    setScore(score + 1)
+  }
+
   let { category, difficulty, question, correct_answer, options } = selectedQuestion
 
   let ratingProps = {
@@ -53,7 +59,14 @@ function App () {
     question,
     correct_answer,
     options,
-    nextQuestion: handleNextQuestion
+    nextQuestion: handleNextQuestion,
+    handleScore
+  }
+
+  let scoreProps = {
+    score,
+    currentQueNumber,
+    totalCount: questions.length
   }
 
   return (
@@ -63,10 +76,14 @@ function App () {
           <Fragment>
             <RatingAndCategory {...ratingProps} />
             <Question {...questionProps} />
+            <ScoreBar {...scoreProps} />
           </Fragment>
         }
         {finished &&
-          <h1>Test Completed!</h1>
+          <Fragment>
+            <h1>Your Score: { calculatePercent(score, questions.length) }%</h1>
+            <h1>Test Completed!</h1>
+          </Fragment>
         }
       </div>
     </div>

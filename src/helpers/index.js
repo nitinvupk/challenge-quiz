@@ -8,3 +8,7 @@ export const shuffle = (a) => {
   }
   return a
 }
+
+export const calculatePercent = (count, totalCount) => {
+  return (count && totalCount) ? Math.ceil(count / totalCount * 100) : 0
+}

@@ -9,8 +9,10 @@ function Question (props) {
   }
 
   const handleNextQuestion = () => {
-    setAnswer(null)
+    let isCorrect = props.correct_answer === answer
+    if (isCorrect) props.handleScore()
     props.nextQuestion()
+    setAnswer(null)
   }
 
   const displayResult = () => {

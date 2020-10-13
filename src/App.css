@@ -42,3 +42,40 @@ body {
 .text-center {
   text-align: center;
 }
+.scoreBox {
+  border: 1px solid #000;
+  border-radius: 4px;
+  height: 25px;
+  display: flex;
+  width: 100%;
+}
+.allWrongBar {
+  background: #000;
+  float: left;
+  height: 100%;
+}
+.allCorrectBar {
+  background: #d2d2d2;
+  float: left;
+  height: 100%;
+}
+.currentScoreBar {
+  background: #717171;
+  float: left;
+  height: 100%;
+}
+.percentBar {
+  height: 25px;
+}
+.currentScorePercent {
+  color: #494949;
+  font-size: 18px;
+  padding: 8px;
+  float: left;
+}
+.maxScorePercent {
+  color: #494949;
+  font-size: 18px;
+  padding: 8px;
+  float: right;
+}
