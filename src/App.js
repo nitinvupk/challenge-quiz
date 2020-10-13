@@ -1,10 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { calculatePercent, shuffle } from './helpers/index'
 import allQuestions from './questions.json'
-import RatingAndCategory from './components/RatingAndCategory'
-import Question from './components/Question'
-import ScoreBar from './components/ScoreBar'
-import QuestionLoadingBar from './components/QuestionLoadingBar'
+import { RatingAndCategory, Question, ScoreBar, QuestionLoadingBar } from './components'
 import './App.css'
 
 function App () {
@@ -69,6 +66,7 @@ function App () {
     currentQueNumber,
     totalCount: questions.length
   }
+
   let loadingBarProps = {
     questionNumber: currentQueNumber + 1,
     totalCount: questions.length

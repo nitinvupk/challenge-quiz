@@ -27,7 +27,7 @@ function Question (props) {
 }
   return (
     <Fragment>
-      <p>{decodeURIComponent(props.question) }</p>
+      <p>{decodeURIComponent(props.question)}</p>
       {props.options &&
         <Fragment>
           <div className='buttonBox'>
