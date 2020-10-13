@@ -3,18 +3,18 @@ import { calculatePercent } from '../helpers/index'
 
 function ScoreBar (props) {
   const [ currentScorePercent, setCurrentScorePercent ] = useState(0)
-  const [ allRemWrongPercent, setAllRemWrongPercent ] = useState(0)
-  const [ allRemCorrectPercent, setAllRemCorrectPercent ] = useState(0)
-  const [ expect, setExpect ] = useState(0)
+  const [ lowestPossiblePercent, setLowestPossiblePercent ] = useState(0)
+  const [ maximumPercent, setMaximumPercent ] = useState(0)
+  const [ maxScore, setMaxScore ] = useState(0)
   useEffect(() => {
     let correct = calculatePercent(props.score, props.totalCount)
-    let allRemWrong = calculatePercent(props.score, props.currentQueNumber)
-    let allRemCorrect = calculatePercent((props.totalCount - props.currentQueNumber + props.score), props.totalCount)
+    let lowestPossible = calculatePercent(props.score, props.currentQueNumber)
+    let maximum = calculatePercent((props.totalCount - props.currentQueNumber + props.score), props.totalCount)
 
     setCurrentScorePercent(correct)
-    setAllRemCorrectPercent(allRemCorrect - allRemWrong)
-    setExpect(allRemCorrect)
-    setAllRemWrongPercent(allRemWrong - correct)
+    setMaximumPercent(maximum - lowestPossible)
+    setMaxScore(maximum)
+    setLowestPossiblePercent(lowestPossible - correct)
   }, [
     props.score,
     props.totalCount,
@@ -25,12 +25,12 @@ function ScoreBar (props) {
     <Fragment>
       <div className='percentBar'>
         <div className='currentScorePercent'>Score:{ currentScorePercent }%</div>
-        <div className='maxScorePercent'>Max:{ expect }%</div>
+        <div className='maxScorePercent'>Max:{ maxScore }%</div>
       </div>
       <div className='scoreBox'>
-        <div className='allWrongBar' style={{ width: `${allRemWrongPercent}%` }} />
-        <div className='currentScoreBar' style={{ width: `${currentScorePercent}%` }} />
-        <div className='allCorrectBar' style={{ width: `${allRemCorrectPercent}%` }} />
+        <div className='lowestPossibleBar' style={{ width: `${lowestPossiblePercent}%` }} />
+        <div className='currentScoreBar' style={{ width: `${currentScorePercent}%` }} />      
+        <div className='maximumPercentBar' style={{ width: `${maximumPercent}%` }} />
       </div>
     </Fragment>
   )
