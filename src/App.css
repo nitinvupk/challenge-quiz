@@ -79,3 +79,13 @@ body {
   padding: 8px;
   float: right;
 }
+.loadingBar {
+  width: 100%;
+  height: 15px;
+  background: #fff;
+}
+.progress {
+  display: block;
+  background: #a9aaa9;
+  height: 100%
+}

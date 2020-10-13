@@ -4,6 +4,7 @@ import allQuestions from './questions.json'
 import RatingAndCategory from './components/RatingAndCategory'
 import Question from './components/Question'
 import ScoreBar from './components/ScoreBar'
+import QuestionLoadingBar from './components/QuestionLoadingBar'
 import './App.css'
 
 function App () {
@@ -68,9 +69,14 @@ function App () {
     currentQueNumber,
     totalCount: questions.length
   }
+  let loadingBarProps = {
+    questionNumber: currentQueNumber + 1,
+    totalCount: questions.length
+  }
 
   return (
     <div className='container'>
+      <QuestionLoadingBar {...loadingBarProps} />
       <div className='questionBox'>
         {!finished &&
           <Fragment>
