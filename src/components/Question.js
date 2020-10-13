@@ -24,30 +24,21 @@ function Question (props) {
         <button className='btn' onClick={handleNextQuestion}>Next Question</button>
       </div>
     )
-}
+  }
   return (
     <Fragment>
       <p>{decodeURIComponent(props.question)}</p>
       {props.options &&
         <Fragment>
           <div className='buttonBox'>
-            <button className={'btn ' + (answer && answer === props['options'][0] ? 'selected' : '')} onClick={() => handleChooseAnswer(0)}>
-              {decodeURIComponent(props.options[0])}
-            </button>
-            <button className={'btn ' + (answer && answer === props['options'][1] ? 'selected' : '')} onClick={() => handleChooseAnswer(1)}>
-              {decodeURIComponent(props.options[1])}
-            </button>
+            {props['options'].map((opt, idx) => (
+              <div className='btnContainer' key={idx}>
+                <button className={'btn ' + (answer && answer === opt ? 'selected' : '')} onClick={() => handleChooseAnswer(idx)}>
+                  {decodeURIComponent(opt)}
+                </button>
+              </div>
+            ))}
           </div>
-          {props['options'].length > 2 &&
-            <div className='buttonBox'>
-              <button className={'btn ' + (answer && answer === props['options'][2] ? 'selected' : '')} onClick={() => handleChooseAnswer(2)}>
-                {decodeURIComponent(props.options[2])}
-              </button>
-              <button className={'btn ' + (answer && answer === props['options'][3] ? 'selected' : '')} onClick={() => handleChooseAnswer(3)}>
-                {decodeURIComponent(props.options[3])}
-              </button>
-            </div>
-          }
         </Fragment>
       }
       { displayResult() }
