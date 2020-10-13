@@ -28,8 +28,8 @@ function ScoreBar (props) {
         <div className='maxScorePercent'>Max:{ expect }%</div>
       </div>
       <div className='scoreBox'>
-        <div className='currentScoreBar' style={{ width: `${currentScorePercent}%` }} />
         <div className='allWrongBar' style={{ width: `${allRemWrongPercent}%` }} />
+        <div className='currentScoreBar' style={{ width: `${currentScorePercent}%` }} />
         <div className='allCorrectBar' style={{ width: `${allRemCorrectPercent}%` }} />
       </div>
     </Fragment>
