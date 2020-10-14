@@ -1,8 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { calculatePercent, shuffle } from './helpers/index'
-import allQuestions from './questions.json'
+import allQuestions from './assets/questions.json'
 import { RatingAndCategory, Question, ScoreBar, QuestionLoadingBar } from './components'
-import './App.css'
+import './assets/css/App.css'
 
 function App () {
   const [ questions, setQuestions ] = useState([])
