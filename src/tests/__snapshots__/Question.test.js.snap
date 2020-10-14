@@ -3,7 +3,55 @@
 exports[`App should render Question component 1`] = `
 <Fragment>
   <p>
-    undefined
+    What was the name of the hero in the 80s animated video game 'Dragon's Lair'?
   </p>
+  <div
+    className="buttonBox"
+  >
+    <div
+      className="btnContainer"
+      key="0"
+    >
+      <button
+        className="btn "
+        onClick={[Function]}
+      >
+        Arthur
+      </button>
+    </div>
+    <div
+      className="btnContainer"
+      key="1"
+    >
+      <button
+        className="btn "
+        onClick={[Function]}
+      >
+        Sir Toby Belch
+      </button>
+    </div>
+    <div
+      className="btnContainer"
+      key="2"
+    >
+      <button
+        className="btn "
+        onClick={[Function]}
+      >
+        Guy of Gisbourne
+      </button>
+    </div>
+    <div
+      className="btnContainer"
+      key="3"
+    >
+      <button
+        className="btn "
+        onClick={[Function]}
+      >
+        Dirk the Daring
+      </button>
+    </div>
+  </div>
 </Fragment>
 `;

@@ -21,7 +21,7 @@ function Question (props) {
       answer &&
       <div className='text-center'>
         <h1>{isCorrect ? 'Correct!' : 'Sorry!'}</h1>
-        <button className='btn' onClick={handleNextQuestion}>Next Question</button>
+        <button id="nextQuestion" className='btn' onClick={handleNextQuestion}>Next Question</button>
       </div>
     )
   }

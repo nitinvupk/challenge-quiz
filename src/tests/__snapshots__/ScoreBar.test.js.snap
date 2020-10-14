@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render ScoreBar component 1`] = `
+<Fragment>
+  <div
+    className="percentBar"
+  >
+    <div
+      className="currentScorePercent"
+    >
+      Score:
+      0
+      %
+    </div>
+    <div
+      className="maxScorePercent"
+    >
+      Max:
+      0
+      %
+    </div>
+  </div>
+  <div
+    className="scoreBox"
+  >
+    <div
+      className="lowestPossibleBar"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    />
+    <div
+      className="currentScoreBar"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    />
+    <div
+      className="maximumPercentBar"
+      style={
+        Object {
+          "width": "0%",
+        }
+      }
+    />
+  </div>
+</Fragment>
+`;
