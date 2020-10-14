@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react'
-import { calculatePercent } from '../helpers/index'
+import { calculatePercent } from '../../helpers/index'
 
 function ScoreBar (props) {
   const [ currentScorePercent, setCurrentScorePercent ] = useState(0)
@@ -29,7 +29,7 @@ function ScoreBar (props) {
       </div>
       <div className='scoreBox'>
         <div className='lowestPossibleBar' style={{ width: `${lowestPossiblePercent}%` }} />
-        <div className='currentScoreBar' style={{ width: `${currentScorePercent}%` }} />      
+        <div className='currentScoreBar' style={{ width: `${currentScorePercent}%` }} />
         <div className='maximumPercentBar' style={{ width: `${maximumPercent}%` }} />
       </div>
     </Fragment>
